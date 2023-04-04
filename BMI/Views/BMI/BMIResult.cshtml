@@ -1,0 +1,73 @@
+﻿@model BMI.Models.BMIs
+
+@{
+    ViewData["Title"] = "BMIResult";
+}
+
+<h1>BMIResult</h1>
+
+<h4>BMIs</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="BMIResult">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Stone" class="control-label"></label>
+                <input asp-for="Stone" class="form-control" />
+                <span asp-validation-for="Stone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pounds" class="control-label"></label>
+                <input asp-for="Pounds" class="form-control" />
+                <span asp-validation-for="WeightInStone" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <label asp-for="Feet" class="control-label"></label>
+                <input asp-for="Feet" class="form-control" />
+                <span asp-validation-for="Feet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inches" class="control-label"></label>
+                <input asp-for="Inches" class="form-control" />
+                <span asp-validation-for="Inches" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="WeightInKg" class="control-label"></label>
+                <input asp-for="WeightInKg" class="form-control" />
+                <span asp-validation-for="WeightInKg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HeightInM" class="control-label"></label>
+                <input asp-for="HeightInM" class="form-control" />
+                <span asp-validation-for="HeightInM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BodyMassIndex" class="control-label"></label>
+                <input asp-for="BodyMassIndex" class="form-control" />
+                <span asp-validation-for="BodyMassIndex" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BMICat" class="control-label"></label>
+                <input asp-for="BMICat" class="form-control" />
+                <span asp-validation-for="BMICat" class="text-danger"></span>
+            </div>*@
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Calculate BMI" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <h4>BMI: @ViewBag.BodyMassIndex</h4>
+    <h4>BMI Category: @ViewBag.BMICat</h4>
+    <br />
+    <h4>Advice: @ViewBag.BMIAdvice</h4>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
